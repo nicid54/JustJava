@@ -20,7 +20,7 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int MAX_VALUE = 10;
+    private final int MAX_VALUE = 20;
     private final int PRODUCT_PRICE = 5;
     private final int WHIPPED_CREAM_PRICE = 1;
     private final int CHOCOLATE_PRICE = 2;

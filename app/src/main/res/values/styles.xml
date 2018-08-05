@@ -8,4 +8,62 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Wrap Content Theme -->
+    <style name="WrapContentTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Match Parent Wrap Content Theme -->
+    <style name="MatchParentWrapContentTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Match Parent Match Parent Theme -->
+    <style name="MatchParentMatchParentTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- Left, Top, Right Margin Theme -->
+    <style name="MarginLeftTopRightTheme" parent="MatchParentWrapContentTheme">
+        <item name="android:layout_marginLeft">@dimen/margin</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginRight">@dimen/margin</item>
+    </style>
+
+    <!-- Left, Top, Right Quantity Margin -->
+    <style name="MarginLeftTopRightQuantityTheme" parent="MatchParentWrapContentTheme">
+        <item name="android:layout_marginLeft">@dimen/quantity_margin</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginRight">@dimen/quantity_margin</item>
+    </style>
+
+    <!-- Left and Top Margin Theme -->
+    <style name="MarginLeftTopTheme" parent="WrapContentTheme">
+        <item name="android:layout_marginLeft">@dimen/margin</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+    </style>
+
+    <!-- Top Margin Theme -->
+    <style name="MarginTopTheme" parent="WrapContentTheme">
+        <item name="android:layout_marginTop">@dimen/margin</item>
+    </style>
+
+    <!-- Button Width and Height Theme -->
+    <style name="ButtonWidthHeightTheme">
+        <item name="android:layout_width">@dimen/button_width_height</item>
+        <item name="android:layout_height">@dimen/button_width_height</item>
+    </style>
+
+    <!-- Button Top Margin Theme -->
+    <style name="ButtonMarginTopTheme" parent="ButtonWidthHeightTheme">
+        <item name="android:layout_marginTop">@dimen/margin</item>
+    </style>
+
+    <!-- Button Left Top Margin -->
+    <style name="ButtonMarginLeftTopTheme" parent="ButtonMarginTopTheme">
+        <item name="android:layout_marginLeft">@dimen/margin</item>
+    </style>
 </resources>

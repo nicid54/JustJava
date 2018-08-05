@@ -1,82 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/MatchParentMatchParentTheme">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/MatchParentWrapContentTheme"
         android:orientation="vertical">
 
         <EditText
+            style="@style/MarginLeftTopRightTheme"
             android:id="@+id/customer_name_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginRight="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:hint="@string/name_text"
             android:inputType="textCapWords" />
 
         <TextView
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/topping_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:text="@string/toppings_title"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"/>
 
         <CheckBox
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/whipped_cream_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:onClick="checkboxClicked"
             android:paddingLeft="5dp"
             android:text="@string/whipped_cream_text" />
 
         <CheckBox
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/chocolate_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:onClick="checkboxClicked"
             android:paddingLeft="5dp"
             android:text="@string/chocolate__text" />
 
         <TextView
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/quantity_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:text="@string/quantity_text"
             android:textAllCaps="true" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/WrapContentTheme"
             android:orientation="horizontal">
 
             <Button
+                style="@style/ButtonMarginLeftTopTheme"
                 android:id="@+id/decrement_button"
-                android:layout_width="@dimen/button_width_height"
-                android:layout_height="@dimen/button_width_height"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginTop="@dimen/margin"
                 android:enabled="false"
                 android:onClick="decrementQuantity"
                 android:text="@string/decrement" />
 
             <TextView
+                style="@style/MarginLeftTopRightQuantityTheme"
                 android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/quantity_margin"
-                android:layout_marginRight="@dimen/quantity_margin"
                 android:layout_marginTop="@dimen/margin"
                 android:text=""
                 android:textColor="@android:color/black"
@@ -84,41 +59,29 @@
                 android:textStyle="bold" />
 
             <Button
+                style="@style/ButtonMarginTopTheme"
                 android:id="@+id/increment_button"
-                android:layout_width="@dimen/button_width_height"
-                android:layout_height="@dimen/button_width_height"
-                android:layout_marginTop="@dimen/margin"
                 android:onClick="incrementQuantity"
                 android:text="@string/increment" />
-
         </LinearLayout>
 
         <TextView
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/toatl_price_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:text="@string/total_text"
             android:textAllCaps="true" />
 
         <TextView
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/total_price_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:text=""
             android:textColor="@android:color/black"
             android:textSize="@dimen/value_size"
             android:textStyle="bold" />
 
         <Button
+            style="@style/MarginLeftTopTheme"
             android:id="@+id/order_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginTop="@dimen/margin"
             android:onClick="submitOrder"
             android:text="@string/order_button_text" />
 
