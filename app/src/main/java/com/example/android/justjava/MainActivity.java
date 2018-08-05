@@ -6,7 +6,9 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -17,6 +19,8 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.text.NumberFormat;
+
+import javax.xml.datatype.Duration;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -241,8 +245,20 @@ public class MainActivity extends AppCompatActivity {
 
         //Show error Toast if a customer's name isn't valid
         if (!isValidName(customerName)) {
+            //Initialize the custom Toast layout
+            View customToastLayout = getLayoutInflater().inflate(R.layout.custom_toast,
+                                        (ViewGroup) findViewById(R.id.custom_toast_container));
             String toastMessage = getResources().getString(R.string.toast_name_error);
-            (Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT)).show();
+            ((TextView) customToastLayout.findViewById(R.id.toast_text)).setText(toastMessage);
+
+            //Show the custom Toast
+            Toast customToast = new Toast(this);
+            //customToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            customToast.setDuration(Toast.LENGTH_SHORT);
+            customToast.setView(customToastLayout);
+            customToast.show();
+
+
             return;
         }
 

@@ -47,7 +47,7 @@
                 android:id="@+id/decrement_button"
                 android:enabled="false"
                 android:onClick="decrementQuantity"
-                android:text="@string/decrement" />
+                android:text="@string/decrement"/>
 
             <TextView
                 style="@style/MarginLeftTopRightQuantityTheme"
@@ -83,7 +83,9 @@
             style="@style/MarginLeftTopTheme"
             android:id="@+id/order_button"
             android:onClick="submitOrder"
-            android:text="@string/order_button_text" />
+            android:text="@string/order_button_text"
+            android:textColor="@android:color/white"
+            android:background="@color/darkBrown"/>
 
     </LinearLayout>
 </ScrollView>
