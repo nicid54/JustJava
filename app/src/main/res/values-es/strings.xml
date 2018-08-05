@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sólo Java</string>
+    <string name="name_text">Nombre</string>
+    <string name="toppings_title">Ingredientes</string>
+    <string name="whipped_cream_text">Crema Batida</string>
+    <string name="quantity_text">Cantidad</string>
+    <string name="order_button_text">Orden</string>
+    <string name="email_subject">"Orden de Sólo Java "</string>
+    <string name="topping_yes">Sí</string>
+    <string name="topping_no">No</string>
+    <string name="order_message">Gracias!</string>
+    <string name="toast_name_error">Por favor ingrese un nombre valido</string>
+    <string name="chocolate__text">Chocolate</string>
+    <string name="increment">+</string>
+    <string name="decrement">-</string>
+    <string name="total_text">Total</string>
+</resources>

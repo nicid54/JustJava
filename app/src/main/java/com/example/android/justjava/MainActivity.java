@@ -21,11 +21,11 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     private final int MAX_VALUE = 10;
+    private final int PRODUCT_PRICE = 5;
+    private final int WHIPPED_CREAM_PRICE = 1;
+    private final int CHOCOLATE_PRICE = 2;
     private int quantity = 1;
-    private int productPrice = 5;
     private int orderTotal = 0;
-    private int whippedCreamPrice = 1;
-    private int chocolatePrice = 2;
     private int whippedCreamValue = 0;
     private int chocolateValue = 0;
 
@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays the quantity of the order in the Quantity TextView
+     * Displays the input quantity of the order in the Quantity TextView
      *
-     * @param number
+     * @param number is the quantity of the order
      */
     private void displayQuantity(int number) {
         TextView quantityTextView;
@@ -112,19 +112,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayPrice(int number) {
         TextView orderSummaryTextView;
-        orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView = findViewById(R.id.total_price_text_view);
         orderSummaryTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
-     * Displays an input message in the Order Summary TextView
-     *
-     * @param message is the string message
-     */
-    private void displayMessage(String message) {
-        TextView priceTextView;
-        priceTextView = findViewById(R.id.order_summary_text_view);
-        priceTextView.setText(message);
     }
 
     /**
@@ -139,29 +128,29 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(String customerName, boolean hasWhippedCream, boolean hasChocolate) {
 
         //Add the customer name
-        String orderSummary = "Name: " + customerName + "\n";
+        String orderSummary = getResources().getString(R.string.name_text) + ": " + customerName + "\n";
 
         //add whipped cream if requested
-        orderSummary += "Whipped Cream: ";
+        orderSummary += getResources().getString(R.string.whipped_cream_text) + ": ";
 
         if (hasWhippedCream) {
-            orderSummary += "Yes\n";
+            orderSummary += getResources().getString(R.string.topping_yes) + "\n";
         } else {
-            orderSummary += "No\n";
+            orderSummary += getResources().getString(R.string.topping_no) + "\n";
         }
 
         //add chocolate if requested
-        orderSummary += "Chocolate: ";
+        orderSummary += getResources().getString(R.string.chocolate__text) + ": ";
 
         if (hasChocolate) {
-            orderSummary += "Yes\n";
+            orderSummary += getResources().getString(R.string.topping_yes) + "\n";
         } else {
-            orderSummary += "No\n";
+            orderSummary += getResources().getString(R.string.topping_no) + "\n";
         }
 
         // Add quantity and total price to the order message
-        orderSummary += "Quantity: " + quantity + "\n";
-        orderSummary += "Total: " + (NumberFormat.getCurrencyInstance()).format(orderTotal) + "\n";
+        orderSummary += getResources().getString(R.string.quantity_text) + ": " + quantity + "\n";
+        orderSummary += getResources().getString(R.string.total_text) + ": " + (NumberFormat.getCurrencyInstance()).format(orderTotal) + "\n";
         orderSummary += getResources().getString(R.string.order_message);
 
         return orderSummary;
@@ -185,9 +174,9 @@ public class MainActivity extends AppCompatActivity {
 
         // add respective topping values
         if (checkBox.getId() == R.id.whipped_cream_checkbox) {
-            whippedCreamValue = checkedValue *= whippedCreamPrice;
+            whippedCreamValue = checkedValue * WHIPPED_CREAM_PRICE;
         } else {
-            chocolateValue = checkedValue *= chocolatePrice;
+            chocolateValue = checkedValue * CHOCOLATE_PRICE;
         }
         orderTotal = calculatePrice();
         displayPrice(orderTotal);
@@ -199,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
      * @return total order price
      */
     private int calculatePrice() {
-        return quantity * (productPrice + whippedCreamValue + chocolateValue);
+        return quantity * (PRODUCT_PRICE + whippedCreamValue + chocolateValue);
     }
 
     /**
@@ -208,20 +197,22 @@ public class MainActivity extends AppCompatActivity {
     private boolean isValidName(String inputName) {
 
         //strip out spaces and tabs
-        inputName = inputName.replaceAll("\\s", "");
+        inputName = inputName.replaceAll("\\p{Blank}", "");
 
-        //if the name is at least one letter
-        if (inputName.matches("[a-zA-Z][a-zA-Z\\-]*")) {
-            return true;
+        //if the string was empty or comprised of blanks spaces, return
+        if (inputName.isEmpty()) {
+            return false;
         }
 
-        return false;
+        //if the name is at least one unicode letter (excluding punctuation)
+        return inputName.matches("[\\p{L}]+");
     }
 
     /**
      * Opens up an email app and composes and email with the input subject and message body
+     *
      * @param emailSubject is the subject of the email
-     * @param emailBody is the message body of the email
+     * @param emailBody    is the message body of the email
      */
     private void sendEmail(String emailSubject, String emailBody) {
 

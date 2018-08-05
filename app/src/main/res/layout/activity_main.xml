@@ -15,8 +15,8 @@
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginRight="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
-            android:hint="@string/edit_text_hint"
-            android:inputType="textCapWords"/>
+            android:hint="@string/name_text"
+            android:inputType="textCapWords" />
 
         <TextView
             android:id="@+id/topping_title"
@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
+            android:onClick="checkboxClicked"
             android:paddingLeft="5dp"
-            android:text="@string/whipped_cream_checkbox_text"
-            android:onClick="checkboxClicked"/>
+            android:text="@string/whipped_cream_text" />
 
         <CheckBox
             android:id="@+id/chocolate_checkbox"
@@ -43,9 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
+            android:onClick="checkboxClicked"
             android:paddingLeft="5dp"
-            android:text="@string/chocolate_checkbox_text"
-            android:onClick="checkboxClicked"/>
+            android:text="@string/chocolate__text" />
 
         <TextView
             android:id="@+id/quantity_title"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
-            android:text="@string/quantity_title"
+            android:text="@string/quantity_text"
             android:textAllCaps="true" />
 
         <LinearLayout
@@ -94,16 +94,16 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/order_summary_title"
+            android:id="@+id/toatl_price_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
-            android:text="@string/order_summary_title"
+            android:text="@string/total_text"
             android:textAllCaps="true" />
 
         <TextView
-            android:id="@+id/order_summary_text_view"
+            android:id="@+id/total_price_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -120,7 +120,7 @@
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
             android:onClick="submitOrder"
-            android:text="@string/button_text"/>
+            android:text="@string/order_button_text" />
 
     </LinearLayout>
 </ScrollView>

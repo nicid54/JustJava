@@ -1,15 +1,25 @@
 <resources>
+    <!-- App Name Information -->
     <string name="app_name">Just Java</string>
-    <string name="edit_text_hint">Name</string>
-    <string name="toppings_title">toppings</string>
-    <string name="quantity_title">quantity</string>
+    <!-- Customer Name Hint  -->
+    <string name="name_text">Name</string>
+    <!--Topping Information-->
+    <string name="toppings_title">Toppings</string>
+    <string name="whipped_cream_text">Whipped Cream</string>
+    <string name="chocolate__text">Chocolate</string>
+    <!-- Order Quantity -->
+    <string name="quantity_text">Quantity</string>
     <string name="increment">+</string>
     <string name="decrement">-</string>
-    <string name="order_summary_title">Order Summary</string>
-    <string name="button_text">order</string>
-    <string name="whipped_cream_checkbox_text">Whipped Cream</string>
-    <string name="chocolate_checkbox_text">Chocolate</string>
-    <string name="order_message">Thank You!</string>
-    <string name="toast_name_error">Please Enter a Valid Name</string>
+    <!-- Total Price for Order-->
+    <string name="total_text">Total</string>
+    <!-- Submit Order Button -->
+    <string name="order_button_text">Order</string>
+    <!-- Email Order Information -->
     <string name="email_subject">Just Java Order</string>
+    <string name="topping_yes">Yes</string>
+    <string name="topping_no">No</string>
+    <string name="order_message">Thank You!</string>
+    <!-- Name Format Error -->
+    <string name="toast_name_error">Please Enter a Valid Name</string>
 </resources>
